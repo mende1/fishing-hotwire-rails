@@ -31,7 +31,7 @@ class FishCatchesController < ApplicationController
     respond_to do |format|
       if @fish_catch.save
         format.turbo_stream do
-          @fish_catch = fish_catches_for_bait(@fish_catch.bait)
+          @fish_catches = fish_catches_for_bait(@fish_catch.bait)
           @new_catch = current_user.fish_catches.new(bait: @fish_catch.bait)
         end
         format.html { redirect_to tackle_box_item_for_catch(@fish_catch) }
@@ -44,10 +44,15 @@ class FishCatchesController < ApplicationController
   def destroy
     @fish_catch.destroy
 
-    redirect_to tackle_box_item_for_catch(@fish_catch)
+    respond_to do |format|
+      format.turbo_stream do
+        @fish_catches = fish_catches_for_bait(@fish_catch.bait)
+      end
+      format.html { redirect_to tackle_box_item_for_catch(@fish_catch) }
+    end
   end
 
-private
+  private
 
   def set_fish_catch
     @fish_catch = current_user.fish_catches.find(params[:id])
