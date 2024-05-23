@@ -1,0 +1,11 @@
+<%= turbo_stream.update "stats",
+                        partial: "tackle_box_items/stats",
+                        locals: { fish_catches: @fish_catches }
+%>
+
+<%= turbo_stream.prepend "catches", @fish_catch %>
+
+<%= turbo_stream.update "new_catch",
+                        partial: "form",
+                        locals: { fish_catch: @new_catch }
+%>
