@@ -1,24 +1,52 @@
-# README
+# Fishing App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple project created for learning purposes, following the **Hotwire for Rails Developers** course by Pragmatic Studio. The project is built with Ruby on Rails and focuses on fishing, baits, and catches.
 
-Things you may want to cover:
+## Table of Contents
 
-* Ruby version
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-* System dependencies
+## Installation
 
-* Configuration
+### Prerequisites
 
-* Database creation
+- Ruby 3.2.2
+- Rails 7.0.8
 
-* Database initialization
+### Steps
 
-* How to run the test suite
+1. Clone the repository:
 
-* Services (job queues, cache servers, search engines, etc.)
+    ```bash
+    git clone https://github.com/mende1/fishing-hotwire-rails.git
+    cd fishing-hotwire-rails
+    ```
 
-* Deployment instructions
+2. Install the required gems:
 
-* ...
+    ```bash
+    bundle install
+    ```
+
+3. Set up the database:
+
+    ```bash
+    rails db:create
+    rails db:migrate
+    rails db:seed
+    ```
+
+4. Start the Rails server:
+
+    ```bash
+    rails server
+    ```
+   
+5. Visit http://localhost:3000 in your web browser.
+
+## Usage
+
+This project includes features for managing fishing, baits, and species catches. You can create, read, update, and delete records for each entity. The app demonstrates basic CRUD operations and the use of Hotwire for creating a modern, interactive user experience.
