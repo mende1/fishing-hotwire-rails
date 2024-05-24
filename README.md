@@ -6,8 +6,6 @@ This is a simple project created for learning purposes, following the **Hotwire 
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
