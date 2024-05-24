@@ -1,6 +1,10 @@
 module ApplicationHelper
   include Pagy::Frontend
 
+  def render_flash_stream
+    turbo_stream.update 'flashes', partial: 'layouts/flash'
+  end
+
   def content_id
     "#{controller_name.underscore}_#{action_name}"
   end
@@ -10,7 +14,7 @@ module ApplicationHelper
   end
 
   def nav_link_class(url)
-    page_active?(url) ? "active" : ""
+    page_active?(url) ? 'active' : ''
   end
 
   def page_active?(url)

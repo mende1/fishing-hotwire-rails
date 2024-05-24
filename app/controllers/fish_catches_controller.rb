@@ -22,6 +22,8 @@ class FishCatchesController < ApplicationController
       if @fish_catch.update(fish_catch_params)
         format.turbo_stream do
           @fish_catches = fish_catches_for_bait(@fish_catch.bait)
+
+          flash.now[:notice] = 'Catch successfully updated.'
         end
         format.html { redirect_to tackle_box_item_for_catch(@fish_catch) }
       else
@@ -38,6 +40,8 @@ class FishCatchesController < ApplicationController
         format.turbo_stream do
           @fish_catches = fish_catches_for_bait(@fish_catch.bait)
           @new_catch = current_user.fish_catches.new(bait: @fish_catch.bait)
+
+          flash.now[:notice] = 'Catch successfully created.'
         end
         format.html { redirect_to tackle_box_item_for_catch(@fish_catch) }
       else
@@ -49,9 +53,12 @@ class FishCatchesController < ApplicationController
   def destroy
     @fish_catch.destroy
 
+
     respond_to do |format|
       format.turbo_stream do
         @fish_catches = fish_catches_for_bait(@fish_catch.bait)
+
+        flash.now[:notice] = 'Catch successfully destroyed.'
       end
       format.html { redirect_to tackle_box_item_for_catch(@fish_catch) }
     end

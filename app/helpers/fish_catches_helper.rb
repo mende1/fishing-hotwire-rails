@@ -15,9 +15,9 @@ module FishCatchesHelper
 
   def next_direction(column)
     if currently_sorted?(column)
-      params[:direction] == "asc" ? "desc" : "asc"
+      params[:direction] == 'asc' ? 'desc' : 'asc'
     else
-      "asc"
+      'asc'
     end
   end
 
@@ -31,4 +31,9 @@ module FishCatchesHelper
     params[:sort] == column.to_s
   end
 
+  def render_update_stats_stream(fish_catches)
+    turbo_stream.update 'stats' do
+      render 'tackle_box_items/stats', fish_catches:
+    end
+  end
 end
