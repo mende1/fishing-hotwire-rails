@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :username, presence: true,
             uniqueness: { case_sensitive: false }
 
-  def filter_catches(params={})
+  def filter_catches(params = {})
     associations = {"bait" => "baits.name"}
 
     sort_column =
