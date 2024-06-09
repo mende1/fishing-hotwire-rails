@@ -18,31 +18,31 @@ This is a simple project created for learning purposes, following the **Hotwire 
 
 1. Clone the repository:
 
-    ```bash
-    git clone https://github.com/mende1/fishing-hotwire-rails.git
-    cd fishing-hotwire-rails
-    ```
+   ```bash
+   git clone https://github.com/mende1/fishing-hotwire-rails.git
+   cd fishing-hotwire-rails
+   ```
 
 2. Install the required gems:
 
-    ```bash
-    bundle install
-    ```
+   ```bash
+   bundle install
+   ```
 
 3. Set up the database:
 
-    ```bash
-    rails db:create
-    rails db:migrate
-    rails db:seed
-    ```
+   ```bash
+   rails db:create
+   rails db:migrate
+   rails db:seed
+   ```
 
 4. Start the Rails server:
 
-    ```bash
-    rails server
-    ```
-   
+   ```bash
+   ./bin/server
+   ```
+
 5. Visit http://localhost:3000 in your web browser.
 
 ## Usage
