@@ -40,7 +40,7 @@ This is a simple project created for learning purposes, following the **Hotwire 
 4. Start the Rails server:
 
    ```bash
-   ./bin/server
+   ./bin/dev
    ```
 
 5. Visit http://localhost:3000 in your web browser.
